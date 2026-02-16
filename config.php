@@ -1,15 +1,12 @@
 <?php
-// Database connection settings
-$servername = "localhost";   // server name
-$username   = "root";        // default username
-$password   = "";            // default password
-$dbname     = "students_db"; // database name
+$servername = "sql101.infinityfree.com";   // InfinityFree SQL server
+$username   = "if0_41174335";              // Your InfinityFree username
+$password   = "your_db_password";          // Copy from MySQL Databases page
+$dbname     = "if0_41174335_students_db";  // Your database name
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 ?>
